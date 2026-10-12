@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nothing Like You — Which Nothing Phone 3 are you?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dot-grid"></div>
+
+<main class="app">
+
+  <!-- ===================== LANDING ===================== -->
+  <section class="screen active" id="screen-landing">
+    <h1 class="serif-heading">Which Nothing Phone 3<br>are you?</h1>
+    <div class="phone-stage">
+      <div class="phone-mock" data-phone="landing"></div>
+    </div>
+    <p class="body-text center small">
+      Answer a few questions.<br>
+      Find your match in under a minute.<br>
+      No download needed.
+    </p>
+    <button class="btn btn-primary" id="btn-start">Start</button>
+  </section>
+
+  <!-- ===================== QUIZ ===================== -->
+  <section class="screen" id="screen-quiz">
+    <div class="progress-pill">
+      <div class="progress-fill" id="quiz-progress-fill"></div>
+      <span class="progress-label doto" id="quiz-progress-label">0%</span>
+    </div>
+    <div class="quiz-count doto" id="quiz-count">1/6</div>
+    <h2 class="serif-heading question-heading" id="quiz-question">Question</h2>
+    <div class="answer-grid" id="quiz-answers"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-outline" id="btn-back">
+        <span class="chev" data-dir="left"></span> Back
+      </button>
+      <button class="btn btn-primary" id="btn-next">Next</button>
+    </div>
+  </section>
+
+  <!-- ===================== CALCULATING ===================== -->
+  <section class="screen dark" id="screen-calculating">
+    <div class="progress-pill light">
+      <div class="progress-fill light-fill" id="calc-progress-fill"></div>
+      <span class="progress-label doto" id="calc-progress-label">0%</span>
+    </div>
+    <h2 class="serif-heading light-text center">
+      Hmm. Let me think about<br>which one of us suits you&hellip;
+    </h2>
+    <p class="body-text light-text center small" id="calc-status">Reading your vibe&hellip;</p>
+    <div class="dot-loader" id="dot-loader"></div>
+  </section>
+
+  <!-- ===================== REVEAL ===================== -->
+  <section class="screen" id="screen-reveal">
+    <div class="progress-pill filled">
+      <span class="progress-label doto">100%</span>
+    </div>
+    <p class="doto eyebrow center" id="reveal-youre">YOU'RE</p>
+    <h2 class="serif-heading center" id="reveal-name">Archetype Name</h2>
+    <p class="body-text center small" id="reveal-rarity">Only 12% get this match.</p>
+    <div class="phone-stage">
+      <div class="phone-mock" id="reveal-phone"></div>
+    </div>
+    <button class="btn btn-outline" id="btn-recustomise-1">
+      Recustomise <span class="chev" data-dir="right"></span>
+    </button>
+    <button class="btn btn-outline" id="btn-see-other-1">
+      See other matches <span class="chev" data-dir="right"></span>
+    </button>
+    <div class="dual-row">
+      <button class="btn btn-outline grow" id="btn-retake-1">
+        Retake quiz <span class="chev" data-dir="right"></span>
+      </button>
+      <button class="btn btn-icon" id="btn-share-icon-1" aria-label="Share">
+        <span class="icon-share" data-icon="share"></span>
+      </button>
+    </div>
+    <button class="btn btn-primary" id="btn-see-why">See why</button>
+  </section>
+
+  <!-- ===================== WHY THIS MATCH ===================== -->
+  <section class="screen" id="screen-why">
+    <div class="top-nav">
+      <button class="btn-back-arrow" id="btn-why-back"><span class="icon-dot-holder" data-dir="left"></span></button>
+      <h2 class="serif-heading small-heading" id="why-name">Archetype Name</h2>
+    </div>
+    <p class="body-text small" id="why-tagline">tagline, here, tagline</p>
+    <div class="phone-stage">
+      <div class="phone-mock" id="why-phone"></div>
+    </div>
+    <h3 class="serif-heading mid-heading">Here's my thinking.</h3>
+    <p class="body-text reasoning" id="why-reasoning">Reasoning copy goes here.</p>
+
+    <h3 class="serif-heading mid-heading">How you compare.</h3>
+    <p class="body-text small compare-intro">Here's how your answers stack up against everyone else who's taken this quiz.</p>
+    <div class="compare-list" id="compare-list"></div>
+
+    <button class="btn btn-primary" id="btn-recustomise-2">
+      Recustomise <span class="chev" data-dir="right"></span>
+    </button>
+  </section>
+
+  <!-- ===================== OTHER MATCHES ===================== -->
+  <section class="screen" id="screen-other">
+    <h2 class="serif-heading center">Other matches&hellip;</h2>
+    <p class="doto eyebrow center">YOUR MATCH</p>
+    <div class="phone-stage small-stage">
+      <div class="phone-mock" id="other-your-phone"></div>
+    </div>
+    <p class="serif-heading small-heading center" id="other-your-name">Archetype Name</p>
+    <div class="other-grid" id="other-grid"></div>
+    <button class="btn btn-primary" id="btn-go-back">
+      <span class="chev" data-dir="left"></span> Go back
+    </button>
+  </section>
+
+  <!-- ===================== RECUSTOMISE ===================== -->
+  <section class="screen" id="screen-recustomise">
+    <div class="top-nav">
+      <button class="btn-back-arrow" id="btn-recustomise-back"><span class="icon-dot-holder" data-dir="left"></span></button>
+      <h2 class="serif-heading small-heading">Make me yours.</h2>
+    </div>
+    <div class="phone-stage">
+      <div class="phone-mock" id="recustomise-phone"></div>
+    </div>
+    <div class="customise-panel">
+      <div class="tab-row">
+        <button class="tab active" id="tab-colour" data-tab="colour">Colour</button>
+        <button class="tab" id="tab-glyph" data-tab="glyph">Glyph pattern</button>
+      </div>
+      <div class="tab-panel" id="panel-colour">
+        <div class="swatch-grid" id="colour-grid"></div>
+      </div>
+      <div class="tab-panel hidden" id="panel-glyph">
+        <div class="glyph-grid" id="glyph-grid"></div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="btn-done">Done</button>
+    <button class="btn btn-outline" id="btn-visit-nothing">
+      Visit Nothing <span class="chev" data-dir="right"></span>
+    </button>
+  </section>
+
+  <!-- ===================== SHARE ===================== -->
+  <section class="screen" id="screen-share">
+    <div class="top-nav">
+      <button class="btn-back-arrow" id="btn-share-back"><span class="icon-dot-holder" data-dir="left"></span></button>
+      <h2 class="serif-heading small-heading">Your Match. Official.</h2>
+    </div>
+    <div class="phone-stage">
+      <div class="phone-mock" id="share-phone"></div>
+    </div>
+    <p class="body-text center small">Not feeling it?</p>
+    <div class="dual-row">
+      <button class="btn btn-outline grow" id="btn-retake-2">
+        Retake quiz <span class="chev" data-dir="right"></span>
+      </button>
+      <button class="btn btn-icon" id="btn-download" aria-label="Download">
+        <span class="icon-download" data-icon="download"></span>
+      </button>
+      <button class="btn btn-icon" id="btn-share-icon-2" aria-label="Share">
+        <span class="icon-share" data-icon="share"></span>
+      </button>
+    </div>
+    <button class="btn btn-primary" id="btn-see-other">See other matches</button>
+    <button class="btn btn-primary" id="btn-meet-real-life">Meet me in real life</button>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
